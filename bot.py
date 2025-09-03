@@ -196,17 +196,8 @@ def main():
     application.add_handler(conv_handler)
     application.add_handler(MessageHandler(filters.Regex('^(عرض الوظائف)$'), show_jobs))
     application.add_handler(MessageHandler(filters.Regex('^(مساعدة)$'), help_command))
-
-    import os
-port = int(os.environ.get('PORT', 5000))
-application.run_webhook(
-    listen="0.0.0.0",
-    port=port,
-    url_path="8473747761:AAHpsIAKx8oobJjrLWwM0aeZO6MkTl29YHI",
-    webhook_url=f"https://your-app-name.railway.app/8473747761:AAHpsIAKx8oobJjrLWwM0aeZO6MkTl29YHI"
-)
+    
     application.run_polling()
 
 if __name__ == "__main__":
-
     main()
